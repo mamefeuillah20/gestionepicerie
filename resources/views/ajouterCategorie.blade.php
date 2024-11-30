@@ -97,12 +97,12 @@
         categories.forEach((category, index) => {
           rows += `
             <tr>
-              <td>${index + 1}</td>
-              <td>${category.nom}</td>
-              <td>${category.description}</td>
+              <td style="font-size:15px; font-weight: bold;">${index + 1}</td>
+              <td style="font-size:15px; font-weight: bold;">${category.nom}</td>
+              <td style="font-size:15px; font-weight: bold;">${category.description}</td>
               <td>
-                <button class="btn btn-warning btn-sm btn-rounded" onclick="editCategory(${category.id})" style="height:40px;">Éditer</button>
-                <button class="btn btn-danger btn-sm btn-rounded" onclick="deleteCategory(${category.id})" style="height:40px;">Supprimer</button>
+                <button class="btn btn-warning btn-sm btn-rounded" onclick="editCategory(${category.id})" style="height:40px; font-size:15px; font-weight: bold;">Éditer</button>
+                <button class="btn btn-danger btn-sm btn-rounded" onclick="deleteCategory(${category.id})" style="height:40px; font-size:15px; font-weight: bold;">Supprimer</button>
               </td>
             </tr>
           `;
