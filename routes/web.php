@@ -9,10 +9,22 @@ use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\FournisseurController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
-Route::resource('produits', ProduitController::class);
-Route::resource('categories', CategorieController::class);
+Route::get('/ajouterCategorie', function () {
+    return view('ajouterCategorie');
+});
+// Route::resource('produits', ProduitController::class);
+Route::get('/all-categories', [CategorieController::class, 'index']);
+Route::post('/create-categories', [CategorieController::class, 'store']);
+Route::get('/show-categories/{id}', [CategorieController::class, 'edit']);
+Route::put('/update-categories/{id}', [CategorieController::class, 'update']);
+Route::delete('/delete-categories/{id}', [CategorieController::class, 'destroy']);
+// Route::resource('categories', CategorieController::class);
+
+
+
+
 Route::resource('fournisseurs', FournisseurController::class);
 Route::resource('commandes', CommandeController::class);
 Route::resource('clients', ClientController::class);
